@@ -1,0 +1,22 @@
+FROM golang:1.19-alpine
+
+WORKDIR /app
+
+# Copy go mod files
+COPY go.mod ./
+COPY go.sum ./
+
+# Download dependencies
+RUN go mod download
+
+# Copy source code
+COPY . .
+
+# Build the seed binary
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o seed cmd/seed/main.go
+
+# Run the seed command
+CMD ["./seed"]
+
+
+
