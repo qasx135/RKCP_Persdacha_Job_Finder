@@ -55,6 +55,18 @@ services:
       - backend
     networks:
       - jobsearch-network
+  
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - jobsearch-network
 
 volumes:
   postgres_data:
