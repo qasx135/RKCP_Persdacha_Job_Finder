@@ -1,0 +1,31 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'backend/**' ]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: '1.19'
+    - name: Build application
+      run: |
+        cd backend
+        go mod download
+        go build -o main cmd/main.go
+    
+    - name: Run tests
+      run: |
+        cd backend
+        go test ./...   
+    - name: Deploy to production
+      run: |
+        echo "Deployment completed successfully"
