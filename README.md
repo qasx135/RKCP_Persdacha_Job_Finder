@@ -85,20 +85,10 @@ job-search-app/
 1. Клонируйте репозиторий:
 ```bash
 git clone [repository-url]
-cd job-search-app
+cd RKCP_Persdacha_Job_Finder
 ```
 
 2. Запустите все сервисы с тестовыми данными:
-```bash
-# Windows
-start-with-seed.bat
-
-# Linux/Mac
-chmod +x start-with-seed.sh
-./start-with-seed.sh
-```
-
-Или вручную:
 ```bash
 docker-compose up --build -d postgres
 # Подождите 10 секунд
