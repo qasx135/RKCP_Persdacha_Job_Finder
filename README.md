@@ -161,7 +161,7 @@ CREATE DATABASE jobsearch;
 - [API Documentation](docs/API.md) - описание REST API
 - [Database Schema](docs/DATABASE.md) - схема базы данных
 - [Deployment Guide](docs/DEPLOYMENT.md) - руководство по развертыванию
-- [Курсовая работа](КУРСОВАЯ_РАБОТА.md) - подробное описание проекта
+
 
 ## Структура базы данных
 
